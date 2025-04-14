@@ -16,7 +16,7 @@ const folders = [
 ];
 
 const Terminal = () => {
-  const [folderSelected, setFolderSelected] = useState(null);
+  const [folderSelected, setFolderSelected] = useState<string>("");
   const [selectedIndex, setSelectedIndex] = useState<number>();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Terminal = () => {
   });
 
   useEffect(() => {
-    setFolderSelected(folders[selectedIndex]);
+    setFolderSelected(folders[selectedIndex || 2]);
   }, [selectedIndex]);
 
   const handleClick = (index: number) => {
